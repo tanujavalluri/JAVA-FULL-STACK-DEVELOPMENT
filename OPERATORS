@@ -1,0 +1,36 @@
+public class ArithmeticExample {
+    public static void main(String[] args) {
+        
+        int a = 10;
+        int b = 3;
+
+        // ➕ Addition
+        int sum = a + b;
+        System.out.println("Addition: " + sum);
+
+        // ➖ Subtraction
+        int difference = a - b;
+        System.out.println("Subtraction: " + difference);
+
+        // ✖️ Multiplication
+        int product = a * b;
+        System.out.println("Multiplication: " + product);
+
+        // ➗ Division
+        int quotient = a / b;          // integer division
+        double division = (double)a / b; // precise division
+        System.out.println("Integer Division: " + quotient);
+        System.out.println("Double Division: " + division);
+
+        // % Modulus (remainder)
+        int remainder = a % b;
+        System.out.println("Remainder: " + remainder);
+
+        // Increment & Decrement
+        a++; // increment
+        b--; // decrement
+        System.out.println("Incremented a: " + a);
+        System.out.println("Decremented b: " + b);
+    }
+}
+
