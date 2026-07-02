@@ -1,0 +1,39 @@
+public class Main {
+    public static void main(String[] args) {
+
+       
+        byte b = 1;
+        short s = 10;
+        int i = 100;
+        long l = 1000L;
+
+        float f = 10.5f;
+        double d = 20.99;
+
+        char c = 'A';
+        boolean bool = true;
+
+      
+        String str = "Hello";
+        int[] arr = {1, 2, 3};
+
+        AllVariables obj = new AllVariables();
+
+        System.out.println(b);
+        System.out.println(s);
+        System.out.println(i);
+        System.out.println(l);
+        System.out.println(f);
+        System.out.println(d);
+        System.out.println(c);
+        System.out.println(bool);
+
+        System.out.println(str);
+        System.out.println(arr[0]);
+        System.out.println(arr[1]);
+        System.out.println(arr[2]);
+
+        System.out.println(obj);
+
+    }
+}
