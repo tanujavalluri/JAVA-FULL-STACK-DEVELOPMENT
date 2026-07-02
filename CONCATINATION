@@ -1,0 +1,30 @@
+//que 1 String x = "125"; String y = "134";
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        String x = "125";
+        String y = "134";
+
+        String result = x + y;
+
+        System.out.println(result);
+
+    }
+}
+
+
+//que 2 int x = 20; double y = x;
+
+public class Main {
+    public static void main(String[] args) {
+
+        int x = 20;
+        double y = x;
+
+        System.out.println(x);
+        System.out.println(y);
+
+    }
+}
