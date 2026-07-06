@@ -1,0 +1,102 @@
+abstract class BankAccount {
+protected String accountNumber;
+protected double balance;
+
+public BankAccount(String accountNumber, double initialBalance) {
+    this.accountNumber = accountNumber;
+    this.balance = initialBalance;
+}
+
+public void displayBalance() {
+    System.out.println("Account: " + accountNumber + " | Current Balance: $" + balance);
+}
+
+public abstract void deposit(double amount);
+public abstract void withdraw(double amount);
+
+
+}
+
+class SavingsAccount extends BankAccount {
+private static final double MINIMUM_BALANCE = 100.00;
+
+
+public SavingsAccount(String accountNumber, double initialBalance) {
+    super(accountNumber, initialBalance);
+}
+
+public void deposit(double amount) {
+    if (amount > 0) {
+        balance += amount;
+        System.out.println("Deposited $" + amount + " to Savings Account.");
+    } else {
+        System.out.println("Invalid deposit amount.");
+    }
+}
+
+public void withdraw(double amount) {
+    if (amount <= 0) {
+        System.out.println("Invalid withdrawal amount.");
+    } else if ((balance - amount) >= MINIMUM_BALANCE) {
+        balance -= amount;
+        System.out.println("Withdrew $" + amount + " from Savings Account.");
+    } else {
+        System.out.println("Transaction Denied: Minimum balance of $" + MINIMUM_BALANCE + " must be maintained.");
+    }
+}
+
+
+}
+
+class CurrentAccount extends BankAccount {
+private double overdraftLimit = 500.00;
+
+
+public CurrentAccount(String accountNumber, double initialBalance) {
+    super(accountNumber, initialBalance);
+}
+
+public void deposit(double amount) {
+    if (amount > 0) {
+        balance += amount;
+        System.out.println("Deposited $" + amount + " to Current Account.");
+    } else {
+        System.out.println("Invalid deposit amount.");
+    }
+}
+
+public void withdraw(double amount) {
+    if (amount <= 0) {
+        System.out.println("Invalid withdrawal amount.");
+    } else if ((balance + overdraftLimit) >= amount) {
+        balance -= amount;
+        System.out.println("Withdrew $" + amount + " from Current Account.");
+    } else {
+        System.out.println("Transaction Denied: Overdraft limit exceeded.");
+    }
+}
+
+
+}
+
+public class Main {
+public static void main(String[] args) {
+
+
+    BankAccount customerSavings = new SavingsAccount("SAV-9876", 150.00);
+    BankAccount customerCurrent = new CurrentAccount("CUR-1234", 200.00);
+
+    System.out.println("--- Savings Account Operations ---");
+    customerSavings.displayBalance();
+    customerSavings.withdraw(100.00);
+    customerSavings.deposit(200.00);
+    customerSavings.displayBalance();
+
+    System.out.println("\n--- Current Account Operations ---");
+    customerCurrent.displayBalance();
+    customerCurrent.withdraw(400.00);
+    customerCurrent.displayBalance();
+}
+
+
+}
