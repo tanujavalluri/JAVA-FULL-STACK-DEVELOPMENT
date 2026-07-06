@@ -1,0 +1,22 @@
+enum Level {
+    LOW(1), MEDIUM(2), HIGH(3);
+
+    private int value;
+
+    Level(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Level l = Level.HIGH;
+
+        System.out.println("Level: " + l);
+        System.out.println("Value: " + l.getValue());
+    }
+}
