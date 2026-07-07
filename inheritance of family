@@ -1,0 +1,23 @@
+class Vehicle {
+    String familyName = "Tanuja Family";
+}
+
+class Car extends Vehicle {
+    String brother = "Moksha";
+    String father = "krishna";
+    String mother = "Sridevi";
+
+    public void displayInfo() {
+        System.out.println("Family: " + familyName);
+        System.out.println("Brother: " + brother);
+        System.out.println("Father: " + father);
+        System.out.println("Mother: " + mother);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car obj = new Car();
+        obj.displayInfo();
+    }
+}
